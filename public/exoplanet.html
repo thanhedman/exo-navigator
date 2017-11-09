@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--For backwards compatibility on promises-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="/assets/js/viewModel.js"></script>
+  <script src="/assets/js/planet.js"></script>
+  <script src="/assets/js/star.js"></script>
+  <script src="/assets/js/search.js"></script>
+  <script src="/assets/js/utilities.js"></script>
+  <script src="/assets/js/canvas.js"></script>
+  <title>Exoplanet Explorer</title>
+</head>
+<body>
+    <div id="left_sidebar" class="sidebar">
+        <section id="search_results">
+          <h2>Planet Search</h2>
+          <p>Search for exoplanets by adjusting the sliders below</p>
+          <h3>Top Matches</h3>
+          <ul id="search_results_list">
+          </ul>
+        </section>
+        <section id="search_filters">
+          <h3>Filters</h3>
+          <form id="search_filters_form">
+            <label for="planet_temperature">Equil. Temperature (K)</label>
+            <div id="planet_temperature"></div>
+            <input type="text" id="planet_temperature_value" class="slider_value" readonly>
+            <label for="planet_radius">Radius (Earth Radii)</label>
+            <div id="planet_radius"></div>
+            <input type="text" id="planet_radius_value" class="slider_value" readonly>
+            <label for="orbit_period">Orbit Period (Days)</label>
+            <div id="orbit_period"></div>
+            <input type="text" id="orbit_period_value" class="slider_value" readonly>
+            <label for="orbit_axis">Orbit Axis (AU)</label>
+            <div id="orbit_axis"></div>
+            <input type="text" id="orbit_axis_value" class="slider_value" readonly>
+          </form>
+        </section>
+    </div>
+    <div id="container">
+        <canvas id="canvas">Canvas not supported</canvas>
+    </div>
+    <div id="right_sidebar" class="sidebar">
+        <section id="system_information">
+        </section>
+    </div>
+    <script>
+        $(document).ready(() => {
+            var canvas = Canvas.getDefault();
+            var view_model = new ViewModel(canvas);
+            view_model.init();
+        });
+    </script>
+</body>
+</html>
