@@ -1,0 +1,24 @@
+{
+  "name": "exo-navigator",
+  "version": "1.0.0",
+  "description": "Browse and visualize exoplanets and the star systems to which they belong.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhedman/exo-navigator.git"
+  },
+  "author": "Nathaniel Hedman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thanhedman/exo-navigator/issues"
+  },
+  "homepage": "https://github.com/thanhedman/exo-navigator#readme"
+}
